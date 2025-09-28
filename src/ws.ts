@@ -57,6 +57,7 @@ export class WsServer<C extends Context> extends Adapter<C, OneBotBot<C, OneBotB
       if (!bot) return socket.close(1008, 'invalid x-self-id')
 
       bot[kSocket] = socket
+      // @ts-ignore
       accept(socket, bot)
     })
 
@@ -87,6 +88,7 @@ export namespace WsServer {
 let counter = 0
 const listeners: Record<number, (response: Response) => void> = {}
 
+// @ts-ignore
 export function accept(socket: Universal.WebSocket, bot: OneBotBot<Context, OneBotBot.BaseConfig & SharedConfig>) {
   socket.addEventListener('message', ({ data }) => {
     let parsed: any

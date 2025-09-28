@@ -37,6 +37,7 @@ export class HttpServer<C extends Context = Context> extends Adapter<C, OneBotBo
         if (!signature) return ctx.status = 401
 
         // invalid signature
+        // @ts-ignore
         const sig = createHmac('sha1', secret).update(ctx.request.body[Symbol.for('unparsedBody')]).digest('hex')
         if (signature !== `sha1=${sig}`) return ctx.status = 403
       }
@@ -45,7 +46,9 @@ export class HttpServer<C extends Context = Context> extends Adapter<C, OneBotBo
       const bot = this.bots.find(bot => bot.selfId === selfId)
       if (!bot) return ctx.status = 403
 
+      // @ts-ignore
       bot.logger.debug('[receive] %o', ctx.request.body)
+      // @ts-ignore
       dispatchSession(bot, ctx.request.body)
     })
   }
