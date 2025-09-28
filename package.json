@@ -1,6 +1,6 @@
 {
-  "name": "koishi-plugin-adapter-onebot",
-  "version": "6.8.0",
+  "name": "@chh2000day/koishi-plugin-adapter-onebot",
+  "version": "6.8.3",
   "description": "OneBot Adapter for Koishi",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -11,13 +11,13 @@
     "Shigma <shigma10826@gmail.com>"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/koishijs/koishi-plugin-adapter-onebot",
+  "homepage": "https://github.com/CHH2000day/koishi-plugin-adapter-onebot",
   "repository": {
     "type": "git",
-    "url": "https://github.com/koishijs/koishi-plugin-adapter-onebot.git"
+    "url": "https://github.com/CHH2000day/koishi-plugin-adapter-onebot.git"
   },
   "bugs": {
-    "url": "https://github.com/koishijs/koishi-plugin-adapter-onebot/issues"
+    "url": "https://github.com/CHH2000day/koishi-plugin-adapter-onebot/issues"
   },
   "keywords": [
     "bot",
@@ -38,8 +38,10 @@
       "implements": [
         "adapter"
       ]
-    }
-  },
+    },
+    "preview": true,
+    "hidden": true
+},
   "scripts": {
     "build": "atsc -b",
     "lint": "eslint --ext=ts --cache"
